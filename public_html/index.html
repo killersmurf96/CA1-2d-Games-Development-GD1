@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>Peter Fitzmaurice Game</title>
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <style type="text/css">
+            body {
+                margin: 0;
+                overflow: auto;
+            }
+            #canvas
+            {
+                border:1px solid black;
+                width:512px;
+                height:480px;
+            }
+
+
+            button {
+                border: 1px solid #000;
+            }
+
+            #loadingMessage
+            {
+                position:absolute;
+                top:100px;
+                left:100px;
+                z-index:100;
+                font-size:50px;
+            }
+
+            #saveImageFile // makes the link look like a button
+            {
+
+                border:thin solid #aaa;
+                background-color:#e9e9e9;
+                padding:2px;
+                padding-left:7px;
+                padding-right: 7px;
+                color:black;
+                text-decoration: none;
+                font-family:Arial, sans-serif;
+                font-size:13px;
+                cursor:default;
+                background : -webkit-linear-gradient(top, #f9f9f9, #e0e0e0);
+                background : -moz-linear-gradient(top, #f9f9f9, #e0e0e0);
+                background : -ms-linear-gradient(top, #f9f9f9, #e0e0e0);
+                background : -o-linear-gradient(top, #f9f9f9, #e0e0e0);    
+                background : linear-gradient(top, #f9f9f9, #e0e0e0);
+            }
+
+
+            saveImageFile:active 
+            {
+                background-color:#f0f0f0;
+                background : -webkit-linear-gradient(top, #e0e0e0, #f9f9f9);
+                background : -moz-linear-gradient(top, #e0e0e0, #f9f9f9);
+                background : -ms-linear-gradient(top, #e0e0e0, #f9f9f9);
+                background : -o-linear-gradient(top, #e0e0e0, #f9f9f9);    
+                background : linear-gradient(top, #e0e0e0, #f9f9f9);      
+            }
+
+        </style>
+    </head>
+    <body>
+        <div  onmouseout = "HTMLPause()" >
+              <canvas id="canvas"></canvas>
+        </div>
+      
+        <script src="javascript/websitejavascript.js"></script>
+        <script src="javascript/main.js"></script>
+        <br>
+        
+        <audio controls>
+            <source src="audio/Tales From The Borderlands Episode 5 intro-credit Song (Retrograde).mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>  
+        <br>
+
+        <ul>
+            <li><strong>Audio</strong>: Play and stop audio for game</li>
+            <li><strong>ARROWS KEYS OR WASD</strong>: Move player</li>
+            <li><strong>SPACE</strong>: Shoot</li>
+            <li><strong>P</strong>: Pause</li>
+            <li><strong>R</strong>: Reset</li>
+        </ul>
+
+        <p> Sources include lectures notes
+             http://derek.dkit.ie/canvas/ <br>
+            http://www.cambiaresearch.com/articles/15/javascript-key-codes <br>
+            http://www.w3schools.com/js/js_objects.asp <br>
+            https://github.com/brunops/zombies-game <br>
+            http://stackoverflow.com/questions/8279729/calculate-fps-in-canvas-using-requestanimationframe <br>
+             http://www.gaminglogy.com/tutorial/controls-keyboard/demo/index.html
+        </p>
+        <a id="saveImageFile" download="image.png" onclick="this.href = canvas.toDataURL('image/png')">Save Score as Screen shot</a>
+        <button onclick="save()"> Save Game</button>
+        <button onclick="loadSave()"> Load Save Game</button>
+        <br>
+        <button onclick="myFunction1()"> Show Game Creator</button>
+        <h3 id="Answer1">Game Creator</h3>    
+
+        <button onclick="hidetext()">hide </button>
+        <br>
+    </body>
+</html>
